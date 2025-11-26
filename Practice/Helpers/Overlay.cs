@@ -51,7 +51,7 @@ namespace Practice.Helpers
                             foreach (var p in duel.GetPlayers())
                             {
                                 if (p != null && p.IsConnected)
-                                    p.ShowHint("<color=red>START!</color>", 2f);
+                                    p.ShowHint("<color=black>S</color>T<color=black>A</color>R<color=black>T</color>!", 2f);
                             }
                         }
                     }

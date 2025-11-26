@@ -132,18 +132,48 @@ namespace Practice.Helpers
             }
         }
 
-        public static void GiveLoadout(Player player, DuelType type)
+        private static ClassicLoadout GetRandomizeLoadout()
+        {
+            var list = Practice.Instance.Config.ClassicLoadouts;
+
+            if (list == null || list.Count == 0)
+                return null;
+
+            int index = Random.Range(0, list.Count);
+
+            return list[index];
+        }
+
+        private static void GiveRandomClassicLoadout(Player player)
+        {
+            var loadout = GetRandomizeLoadout();
+
+            foreach (var item in loadout.Items)
+                player.AddItem(item.Item);
+        }
+
+        private static void GiveClassicLoadout(Player player, Duels duel)
+        {
+            duel.SelectedClassicLoadout ??= GetRandomizeLoadout();
+
+            var loadout = duel.SelectedClassicLoadout;
+
+            foreach (var item in loadout.Items)
+                player.AddItem(item.Item);
+        }
+
+        public static void GiveLoadout(Player player, DuelType type, Duels duel = null)
         {
             player.ClearInventory();
 
             switch (type)
             {
                 case DuelType.Classic:
-                    player.AddItem(ItemType.GunCrossvec);
-                    player.AddItem(ItemType.ArmorCombat);
-                    player.AddItem(ItemType.Medkit);
-                    player.AddItem(ItemType.KeycardO5);
-                    player.AddItem(ItemType.Ammo9x19, 10);
+                    GiveClassicLoadout(player, duel);
+                    break;
+
+                case DuelType.RandomClassic:
+                    GiveRandomClassicLoadout(player);
                     break;
 
                 case DuelType.Jailbird:

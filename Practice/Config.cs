@@ -17,6 +17,7 @@ namespace Practice
                     new ClassicLoadoutItem { Item = ItemType.ArmorCombat},
                     new ClassicLoadoutItem { Item = ItemType.Medkit},
                     new ClassicLoadoutItem { Item = ItemType.KeycardO5},
+                    new ClassicLoadoutItem { Item = ItemType.Ammo9x19},
                 }
             },
             new ClassicLoadout
@@ -27,6 +28,7 @@ namespace Practice
                     new ClassicLoadoutItem { Item = ItemType.ArmorHeavy},
                     new ClassicLoadoutItem { Item = ItemType.Medkit},
                     new ClassicLoadoutItem { Item = ItemType.KeycardO5},
+                    new ClassicLoadoutItem { Item = ItemType.Ammo556x45},
                 }
             },
             new ClassicLoadout
@@ -37,8 +39,20 @@ namespace Practice
                     new ClassicLoadoutItem { Item = ItemType.ArmorLight},
                     new ClassicLoadoutItem { Item = ItemType.Medkit},
                     new ClassicLoadoutItem { Item = ItemType.KeycardO5},
+                    new ClassicLoadoutItem { Item = ItemType.Ammo9x19},
                 }
-            }
+            },
+            new ClassicLoadout
+            {
+                Items = new List<ClassicLoadoutItem>
+                {
+                    new ClassicLoadoutItem { Item = ItemType.GunCOM18},
+                    new ClassicLoadoutItem { Item = ItemType.ArmorLight},
+                    new ClassicLoadoutItem { Item = ItemType.Adrenaline},
+                    new ClassicLoadoutItem { Item = ItemType.KeycardO5},
+                    new ClassicLoadoutItem { Item = ItemType.Ammo9x19},
+                }
+            },
         };
     }
 }

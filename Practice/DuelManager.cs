@@ -121,6 +121,7 @@ namespace Practice
                 return;
 
             var players = duel.GetPlayers();
+
             if (players.Count < 2)
                 return;
 
@@ -128,8 +129,8 @@ namespace Practice
 
             foreach (var p in players)
             {
-                DuelHelper.GiveLoadout(p, duel.DuelType);
-                p.EnableEffect(EffectType.Ensnared, duel.CountdownDuration + 2);
+                DuelHelper.GiveLoadout(p, duel.DuelType, duel);
+                p.EnableEffect(EffectType.Ensnared, duel.CountdownDuration + 1);
             }
 
             duel.CountdownStart = DateTime.UtcNow;
