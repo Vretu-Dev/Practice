@@ -16,5 +16,7 @@ This is a custom mode called “practice.” Instead of a standard round, player
 - 1v1
 - 2v2
 ### Types:
-- Classic (Crossvec, ArmorCombat, Medkit)
+- Classic (every player has same random loadout)
+- RandomClassic (every player has different random loadout)
 - Jailbird
+- ParticleDisruptor
