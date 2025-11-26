@@ -11,8 +11,6 @@ namespace Practice
 
         public static void SpawnAll()
         {
-            ClearAll();
-
             foreach (var arena in Arenas.AllArenas)
             {
                 foreach (var barrier in arena.Barriers)
@@ -20,15 +18,10 @@ namespace Practice
             }
         }
 
-        public static void ClearAll()
+        public static void DeSpawnAll()
         {
             foreach (var prim in Spawned)
-            {
-                if (prim.GameObject == null)
-                    continue;
-
                 prim?.Destroy();
-            }
 
             Spawned.Clear();
         }

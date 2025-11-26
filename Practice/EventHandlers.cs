@@ -22,14 +22,27 @@ namespace Practice
 
         public static void UnregisterEvents()
         {
+            OnPluginDisable();
             Exiled.Events.Handlers.Warhead.Starting -= OnWarheadStarting;
             Exiled.Events.Handlers.Server.RespawningTeam -= OnRespawningTeam;
             Exiled.Events.Handlers.Player.Verified -= OnVerified;
             Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
             Exiled.Events.Handlers.Player.Died -= OnDied;
-            
         }
 
+        private static void OnPluginDisable()
+        {
+            Barriers.DeSpawnAll();
+
+            Round.IsLocked = false;
+            Map.IsDecontaminationEnabled = true;
+
+            foreach (Lift lift in Lift.List)
+                lift.ChangeLock(DoorLockReason.AdminCommand);
+
+            foreach(var duel in DuelManager.Duels.ToList())
+                DuelManager.FinishDuel(duel);
+        }   
         private static void OnWarheadStarting(StartingEventArgs ev) => ev.IsAllowed = false;
         private static void OnRespawningTeam(RespawningTeamEventArgs ev) => ev.IsAllowed = false;
 
