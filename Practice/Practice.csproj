@@ -62,6 +62,7 @@
     <Compile Include="Commands\Rooms.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="API\Duels.cs" />
+    <Compile Include="Configs\Loadout.cs" />
     <Compile Include="DuelManager.cs" />
     <Compile Include="API\Enums.cs" />
     <Compile Include="EventHandlers.cs" />

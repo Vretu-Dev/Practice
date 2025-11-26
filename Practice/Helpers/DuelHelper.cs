@@ -150,6 +150,11 @@ namespace Practice.Helpers
                     player.AddItem(ItemType.Jailbird);
                     player.AddItem(ItemType.KeycardO5);
                     break;
+
+                case DuelType.ParticleDisruptor:
+                    player.AddItem(ItemType.ParticleDisruptor);
+                    player.AddItem(ItemType.KeycardO5);
+                    break;
             }
         }
 

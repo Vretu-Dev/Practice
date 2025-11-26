@@ -22,16 +22,18 @@ namespace Practice
         public DateTime CreatedAt;
         public DateTime? CountdownStart;
 
-        public int CountdownDuration = 8;
+        public int CountdownDuration = 10;
 
         public List<Player> GetPlayers() => Players.Where(p => p != null && p.IsConnected).ToList();
         public List<Player> Players { get; } = new();
         public List<Player> TeamA { get; } = new();
         public List<Player> TeamB { get; } = new();
 
+        public ClassicLoadout SelectedClassicLoadout;
+
         public RoleTypeId TeamARole;
         public RoleTypeId TeamBRole;
-
+        
         public bool ContainsPlayer(Player player) => Players.Contains(player);
         public bool IsFull => CurrentPlayersCount >= RequiredPlayers;
         

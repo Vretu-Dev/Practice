@@ -15,7 +15,9 @@
     public enum DuelType
     {
         Classic,
+        RandomClassic,
         Jailbird,
+        ParticleDisruptor,
     }
 
     public enum DuelMode
